@@ -17,19 +17,21 @@ Nos interesa trabajar en los siguientes **Objetivos de Desarrollo Sostenible (OD
 ---
 
   ## 📸 Fotografía del Equipo  
-
+<p align="center">
+<img width="1408" height="768" alt="imagen_alumnos_IA" src="/Imagenes/fotogrupal.jpeg" />
+  <em>Figura 1. Fotografía del equipo 02</em>
 --
 
 ## 👥 Integrantes del Equipo  
 
 | Foto | Nombre | Rol | Intereses |
 |------|--------|-----|-----------|
-| | Vega Mogollón, Rodrigo Aaron| Programador de GitHub | Gatos, Voley, Música y Morat|
-| | Zuñiga Apolinario, Valeria Tanushree| Secretaría y documentadora | Perros, dibujo y música | 
-| | Rodriguez Uyen, Nairoby Alberta Yesenia| Coordinadora | Gatos, libros y música |
-| | Ruiz Castillo, Anna Marypaz | Investigadora | Perros, ver series y música |
-| | Vásquez Guillén, Alonso Diego | Gestor de tareas | Fútbol, videojuegos y ajedrez |
-| | Salazar Requejo Radmel Jhair | Prototipado/Hardware | Deportes y videojuegos |
+| <img src="/Imagenes/RODRIGO.jpeg" width="550"/> | Vega Mogollón, Rodrigo Aaron| Programador de GitHub | Gatos, Voley, Música y Morat|
+| <img src="/Imagenes/TANUSHREE.jpeg" width="550"/> | Zuñiga Apolinario, Valeria Tanushree| Secretaría y documentadora | Perros, dibujo y música | 
+| <img src="/Imagenes/NAIROBY.jpeg" width="550"/> | Rodriguez Uyen, Nairoby Alberta Yesenia| Coordinadora | Gatos, libros y música |
+| <img src="/Imagenes/ANNA.jpeg" width="550"/> | Ruiz Castillo, Anna Marypaz | Investigadora | Perros, ver series y música |
+| <img src="/Imagenes/ALONSO.jpeg" width="550"/> | Vásquez Guillén, Alonso Diego | Gestor de tareas | Fútbol, videojuegos y ajedrez |
+| <img src="/Imagenes/JHAIR.jpeg" width="550"/> | Salazar Requejo Radmel Jhair | Prototipado/Hardware | Deportes y videojuegos |
   
 ---
 
