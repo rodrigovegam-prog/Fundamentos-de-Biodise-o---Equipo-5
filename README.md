@@ -10,10 +10,24 @@ Nuestro objetivo es aplicar la metodología de diseño para generar soluciones i
 
 Nos interesa trabajar en los siguientes **Objetivos de Desarrollo Sostenible (ODS):**  
 - ODS 3: Salud y Bienestar  
-- ODS 9: Industria, Innovación e Infraestructura  
+- ODS 9: Industria, Innovación e Infraestructura
+- ODS 10: Reducción de las Desigualdades
 - ODS 11: Ciudades y Comunidades Sostenibles
 
 ---
 
   ## 📸 Fotografía del Equipo  
+
+--
+
+## 👥 Integrantes del Equipo  
+
+| Foto | Nombre | Rol | Intereses |
+|------|--------|-----|-----------|
+| | Vega Mogollón, Rodrigo Aaron| 
+| | Zuñiga 
+| | Rodriguez 
+| | Ruiz 
+| | Vasquéz | Metologiía
+| | Salazar | Prototipado/Hardware
   
