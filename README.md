@@ -12,7 +12,7 @@ Nos interesa trabajar en los siguientes **Objetivos de Desarrollo Sostenible (OD
 - ODS 3: Salud y Bienestar  
 - ODS 9: Industria, Innovación e Infraestructura
 - ODS 10: Reducción de las Desigualdades
-- ODS 11: Ciudades y Comunidades Sostenibles
+- ODS 11: Ciudades y Comunidades Sostenibles.
 
 ---
 
