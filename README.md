@@ -24,10 +24,14 @@ Nos interesa trabajar en los siguientes **Objetivos de Desarrollo Sostenible (OD
 
 | Foto | Nombre | Rol | Intereses |
 |------|--------|-----|-----------|
-| | Vega Mogollón, Rodrigo Aaron| 
-| | Zuñiga 
-| | Rodriguez 
-| | Ruiz 
-| | Vasquéz | Metologiía
-| | Salazar | Prototipado/Hardware
+| | Vega Mogollón, Rodrigo Aaron| Programador de GitHub | Gatos, Voley, Música y Morat|
+| | Zuñiga Apolinario, Valeria Tanushree| Secretaría y documentadora | Perros, dibujo y música | 
+| | Rodriguez Uyen, Nairoby Alberta Yesenia| Coordinadora | Gatos, libros y música |
+| | Ruiz Castillo, Anna Marypaz | Investigadora | Perros, ver series y música |
+| | Vásquez Guillén, Alonso Diego | Gestor de tareas | Fútbol, videojuegos y ajedrez |
+| | Salazar Requejo Radmel Jhair | Prototipado/Hardware | Deportes y videojuegos |
   
+---
+
+## 📌 Resumen Final  
+Este README resume quiénes somos, qué nos motiva y en qué ODS queremos enfocar nuestro trabajo durante el curso.  
