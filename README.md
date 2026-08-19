@@ -22,16 +22,7 @@ Nos interesa trabajar en los siguientes **Objetivos de Desarrollo Sostenible (OD
   <em>Figura 1. Fotografía del equipo 05</em>
 --
 
-## 👥 Integrantes del Equipo  
 
-| Foto | Nombre | Rol | Intereses |
-|------|--------|-----|-----------|
-| <img src="/Imagenes/RODRIGO.jpeg" width="550"/> | **Vega Mogollón, Rodrigo Aaron**| **Programador de GitHub** | **Gatos, Voley, Música y Morat**|
-| <img src="/Imagenes/TANUSHREE.jpeg" width="550"/> | **Zuñiga Apolinario, Valeria Tanushree**| **Secretaría y documentadora** | **Perros, dibujo y música** | 
-| <img src="/Imagenes/NAIROBY.jpeg" width="550"/> | **Rodriguez Uyen, Nairoby Alberta Yesenia**| **Coordinadora** | **Gatos, libros y música** |
-| <img src="/Imagenes/ANNA.jpeg" width="550"/> | **Ruiz Castillo, Anna Marypaz** | **Investigadora** | **Perros, ver series y música** |
-| <img src="/Imagenes/ALONSO.jpeg" width="550"/> | **Vásquez Guillén, Alonso Diego** | **Gestor de tareas** | **Fútbol, videojuegos y ajedrez** |
-| <img src="/Imagenes/JHAIR.jpeg" width="550"/> | **Salazar Requejo Radmel Jhair** | **Prototipado/Hardware** | **Deportes y videojuegos** |
   
 ---
 
