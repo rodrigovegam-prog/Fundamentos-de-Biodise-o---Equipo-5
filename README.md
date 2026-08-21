@@ -25,7 +25,7 @@ Nos interesa trabajar en los siguientes **Objetivos de Desarrollo Sostenible (OD
 
 | Foto | Nombre | Rol | Intereses |
 |------|--------|-----|-----------|
-| <img src="/Imagenes/RODRIGO.jpeg" width="550"/> | **Vega Mogollón, Rodrigo Aaron**| **Programador de GitHub** | **Gatos, Voley, Música y Morat**|
+| <img src="/Imagenes/rodrigo.jpeg" width="550"/> | **Vega Mogollón, Rodrigo Aaron**| **Programador de GitHub** | **Gatos, Voley, Música y Morat**|
 | <img src="/Imagenes/TANUSHREE.jpeg" width="550"/> | **Zuñiga Apolinario, Valeria Tanushree**| **Secretaría y documentadora** | **Perros, dibujo y música** | 
 | <img src="/Imagenes/NAIROBY.jpeg" width="550"/> | **Rodriguez Uyen, Nairoby Alberta Yesenia**| **Coordinadora** | **Gatos, libros y música** |
 | <img src="/Imagenes/ANNA.jpeg" width="550"/> | **Ruiz Castillo, Anna Marypaz** | **Investigadora** | **Perros, ver series y música** |
