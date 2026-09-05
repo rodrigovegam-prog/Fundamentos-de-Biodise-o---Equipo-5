@@ -1,0 +1,53 @@
+const int trigPin = 9;
+const int echoPin = 8;
+
+const int ledRed = 4;
+const int ledYellow = 5;
+const int ledGreen = 6;
+
+void setup() {
+  pinMode(trigPin, OUTPUT);
+  pinMode(echoPin, INPUT);
+  
+  pinMode(ledRed, OUTPUT);
+  pinMode(ledYellow, OUTPUT);
+  pinMode(ledGreen, OUTPUT);
+  
+  Serial.begin(9600);
+}
+
+void loop() {
+  // Enviar pulso ultrasónico
+  digitalWrite(trigPin, LOW);
+  delayMicroseconds(2);
+  digitalWrite(trigPin, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(trigPin, LOW);
+  
+  // Leer el tiempo de retorno del eco
+  long duration = pulseIn(echoPin, HIGH);
+  
+  // Calcular la distancia en centímetros
+  int distance = duration * 0.034 / 2; 
+  
+  // Mostrar distancia en el monitor serie
+  Serial.print("Distancia: ");
+  Serial.print(distance);
+  Serial.println(" mm");
+  
+  // Apagar todos los LEDs inicialmente
+  digitalWrite(ledRed, LOW);
+  digitalWrite(ledYellow, LOW);
+  digitalWrite(ledGreen, LOW);
+  
+  // Evaluar rangos de proximidad según la práctica
+  if (distance > 0 && distance <= 10) {
+    digitalWrite(ledRed, HIGH);     // 0-10 cm: Rojo
+  } else if (distance > 10 && distance <= 30) {
+    digitalWrite(ledYellow, HIGH);  // 10-30 cm: Amarillo
+  } else if (distance > 30) {
+    digitalWrite(ledGreen, HIGH);   // > 30 cm: Verde
+  }
+  
+  delay(200);
+}
