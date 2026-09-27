@@ -1,0 +1,88 @@
+// Definición de pines
+const int pinPOT = A0;      // Entrada del potenciómetro
+const int pinBOTON = 2;     // Entrada del pulsador (Modo Asistencia)
+const int pinENA = 9;       // Control PWM de velocidad
+const int pinIN1 = 7;       // Dirección 1
+const int pinIN2 = 6;       // Dirección 2
+
+// Variables globales
+int valPot = 0;             // Lectura analógica del potenciómetro
+int pwmVelocidad = 0;       // Valor PWM calculado (0 - 255)
+int pwmRampa = 0;           // Velocidad para el modo rampa
+unsigned long tiempoAnterior = 0;
+const int intervaloRampa = 15; // Intervalo en ms para aceleración suave
+
+void setup() {
+  // Configuración de pines de salida
+  pinMode(pinENA, OUTPUT);
+  pinMode(pinIN1, OUTPUT);
+  pinMode(pinIN2, OUTPUT);
+
+  // Configuración de entradas
+  pinMode(pinPOT, INPUT);
+  pinMode(pinBOTON, INPUT_PULLUP); // Usa resistencia pull-up interna/externa
+
+  // Inicialización del Serial Plotter
+  Serial.begin(9600);
+}
+
+void loop() {
+  // Lectura del estado del pulsador (LOW significa presionado debido a Pull-Up)
+  bool botonPresionado = (digitalRead(pinBOTON) == LOW);
+
+  if (!botonPresionado) {
+    // -------------------------------------------------------------
+    // 1. MODO NORMAL (Pulsador NO presionado)
+    // Sentido Horario y velocidad según Potenciómetro
+    // -------------------------------------------------------------
+    valPot = analogRead(pinPOT);
+    pwmVelocidad = map(valPot, 0, 1023, 0, 255); // Mapeo a valor PWM de 8 bits
+
+    // Sentido Horario
+    digitalWrite(pinIN1, HIGH);
+    digitalWrite(pinIN2, LOW);
+
+    // Aplicar PWM
+    analogWrite(pinENA, pwmVelocidad);
+
+    // Reiniciar rampa para el siguiente uso
+    pwmRampa = 0;
+
+  } else {
+    // -------------------------------------------------------------
+    // 2. MODO ASISTENCIA (Pulsador Presionado)
+    // Invertir sentido (Antihorario) y Aceleración Suave (Rampa)
+    // -------------------------------------------------------------
+    valPot = analogRead(pinPOT); // Mantenemos lectura para gráfico
+    
+    // Sentido Antihorario
+    digitalWrite(pinIN1, LOW);
+    digitalWrite(pinIN2, HIGH);
+
+    // Aceleración en rampa no bloqueante
+    if (millis() - tiempoAnterior >= intervaloRampa) {
+      tiempoAnterior = millis();
+      if (pwmRampa < 255) {
+        pwmRampa += 5; // Incrementar suavemente la velocidad
+        if (pwmRampa > 255) pwmRampa = 255;
+      }
+    }
+    pwmVelocidad = pwmRampa;
+    analogWrite(pinENA, pwmVelocidad);
+  }
+
+  // -------------------------------------------------------------
+  // 3. REGISTRO PARA SERIAL PLOTTER
+  // Imprimir variables separadas por espacio o coma
+  // -------------------------------------------------------------
+  Serial.print("Lectura_Pot:");
+  Serial.print(valPot);
+  Serial.print(" ");
+  Serial.print("PWM_Salida:");
+  Serial.print(pwmVelocidad);
+  Serial.print(" ");
+  Serial.print("Estado_Boton:");
+  Serial.println(botonPresionado ? 255 : 0); // Escala visible en plotter
+
+  delay(20); // Pequeña pausa para estabilidad del puerto serie
+}
