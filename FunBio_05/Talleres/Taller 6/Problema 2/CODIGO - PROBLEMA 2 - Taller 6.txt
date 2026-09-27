@@ -1,0 +1,49 @@
+#include <Servo.h>
+
+Servo miServo;
+
+const int pinFlex = A0;   
+const int pinLed = 8;     
+const int pinServo = 9;   
+
+void setup() {
+  pinMode(pinLed, OUTPUT);
+  
+  
+  miServo.attach(pinServo, 500, 2400); 
+  
+  Serial.begin(9600);
+}
+
+void loop() {
+  
+  int valorADC = analogRead(pinFlex);
+
+  
+  int anguloEstimado = map(valorADC, 200, 850, 0, 270); 
+  anguloEstimado = constrain(anguloEstimado, 0, 270); 
+
+  
+  int pulsoMicroSeg = map(anguloEstimado, 0, 270, 500, 2400);
+
+ 
+  miServo.write(anguloEstimado);
+
+  
+  if (anguloEstimado >= 270) {
+    digitalWrite(pinLed, HIGH);
+  } else {
+    digitalWrite(pinLed, LOW);
+  }
+
+  
+  Serial.print("ADC: ");
+  Serial.print(valorADC);
+  Serial.print(" | Pulso (µs): ");
+  Serial.print(pulsoMicroSeg);
+  Serial.print(" | Angulo Est.: ");
+  Serial.print(anguloEstimado);
+  Serial.println(" °");
+
+  delay(100); 
+}
