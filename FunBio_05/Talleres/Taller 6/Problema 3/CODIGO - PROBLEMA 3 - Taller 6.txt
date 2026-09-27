@@ -1,0 +1,54 @@
+#include <DHT.h>
+
+#define DHTPIN 2        
+#define DHTTYPE DHT11   
+
+DHT dht(DHTPIN, DHTTYPE);
+
+const int motorPin = 9; 
+
+void setup() {
+  Serial.begin(9600);
+  dht.begin();
+  pinMode(motorPin, OUTPUT);
+}
+
+void loop() {
+   delay(2000);
+
+  
+  float t = dht.readTemperature();
+
+  
+  if (isnan(t)) {
+    Serial.println(F("¡Error al leer del sensor DHT11!"));
+    return;
+  }
+
+  
+  Serial.print(F("Temperatura: "));
+  Serial.print(t);
+  Serial.print(F(" °C  -->  Estado: "));
+
+  int pwmVelocidad = 0;
+
+  
+  if (t >= 25.0 && t < 28.0) {
+    pwmVelocidad = 0;   // 25-28 °C: sin vibración[cite: 2]
+    Serial.println(F("Sin vibración (25-28 °C)"));
+  } 
+  else if (t >= 28.0 && t < 31.0) {
+    pwmVelocidad = 150; // 28-31 °C: vibración media (~60% PWM)[cite: 2]
+    Serial.println(F("Vibración media (28-31 °C)"));
+  } 
+  else if (t >= 31.0 && t <= 34.0) {
+    pwmVelocidad = 255; // 31-34 °C: vibración alta (100% PWM)[cite: 2]
+    Serial.println(F("Vibración alta (31-34 °C)"));
+  } 
+  else {
+    pwmVelocidad = 0;
+    Serial.println(F("Fuera de rango de confort térmico"));
+  }
+
+  analogWrite(motorPin, pwmVelocidad);
+}
