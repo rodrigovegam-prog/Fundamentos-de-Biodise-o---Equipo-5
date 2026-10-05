@@ -29,7 +29,7 @@ Nos interesa trabajar en los siguientes **Objetivos de Desarrollo Sostenible (OD
 | <img src="/Imagenes/Team photo/TANUSHREE.jpeg" width="550"/> | **Zuñiga Apolinario, Valeria Tanushree**| **Secretaría y documentadora** | **Perros, dibujo y música** | 
 | <img src="/Imagenes/Team photo/NAIROBY.jpeg" width="550"/> | **Rodriguez Uyen, Nairoby Alberta Yesenia**| **Coordinadora** | **Gatos, libros y música** |
 | <img src="/Imagenes/Team photo/ANNA.jpeg" width="550"/> | **Ruiz Castillo, Anna Marypaz** | **Investigadora** | **Perros, ver series y música** |
-| <img src="/Imagenes/Team photo/ALONSO.jpeg" width="550"/> | **Vásquez Guillén, Alonso Diego** | **Gestor de tareas** | **Fútbol, videojuegos y ajedrez** |
+| <img src="/Imagenes/Team photo/ ALONSO.jpeg" width="550"/> | **Vásquez Guillén, Alonso Diego** | **Gestor de tareas** | **Fútbol, videojuegos y ajedrez** |
 | <img src="/Imagenes/Team photo/JHAIR.jpeg" width="550"/> | **Salazar Requejo Radmel Jhair** | **Prototipado/Hardware** | **Deportes y videojuegos** |
 
   
