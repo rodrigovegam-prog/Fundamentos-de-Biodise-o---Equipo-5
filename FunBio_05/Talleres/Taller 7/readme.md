@@ -1,3 +1,3 @@
 # PROBLEMA 2
 
-<img src="/Imagenes/Team photo/rodrigo.jpeg" width="550"/>
+<img src="Imagenes/Otras fotos/Montaje - PROBLEMA 2 - Taller 7.jpeg" width="550"/>
