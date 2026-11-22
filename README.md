@@ -25,12 +25,12 @@ Nos interesa trabajar en los siguientes **Objetivos de Desarrollo Sostenible (OD
 
 | Foto | Nombre | Rol | Intereses |
 |------|--------|-----|-----------|
-| <img src="/Imagenes/Team photo/rodrigo.jpeg" width="550"/> | **Vega Mogollón, Rodrigo Aaron**| **Programador de GitHub** | **Gatos😼, 🏀⚽🏐, Música 🎧 y Morat**|
-| <img src="/Imagenes/Team photo/TANUSHREE.jpeg" width="550"/> | **Zuñiga Apolinario, Valeria Tanushree**| **Secretaría y documentadora** | **Perros, dibujo y música** | 
-| <img src="/Imagenes/Team photo/NAIROBY.jpeg" width="550"/> | **Rodriguez Uyen, Nairoby Alberta Yesenia**| **Coordinadora** | **Gatos, libros y música** |
-| <img src="/Imagenes/Team photo/ANNA.jpeg" width="550"/> | **Ruiz Castillo, Anna Marypaz** | **Investigadora** | **Perros, ver series y música** |
-| <img src="/Imagenes/Team photo/ ALONSO.jpeg" width="550"/> | **Vásquez Guillén, Alonso Diego** | **Gestor de tareas** | **Fútbol, videojuegos y ajedrez** |
-| <img src="/Imagenes/Team photo/JHAIR.jpeg" width="550"/> | **Salazar Requejo Radmel Jhair** | **Prototipado/Hardware** | **Deportes y videojuegos** |
+| <img src="/Imagenes/Team photo/rodrigo.jpeg" width="550"/> | **Vega Mogollón, Rodrigo Aaron**| **Desarrollo Mecatrónico y Prototipado** | **Gatos😼, 🏀⚽🏐, Música 🎧 y Morat**|
+| <img src="/Imagenes/Team photo/TANUSHREE.jpeg" width="550"/> | **Zuñiga Apolinario, Valeria Tanushree**| **Conceptualización y Comunicación** | **Perros, dibujo y música** | 
+| <img src="/Imagenes/Team photo/NAIROBY.jpeg" width="550"/> | **Rodriguez Uyen, Nairoby Alberta Yesenia**| **Gestora de Proyecto** | **Gatos, libros y música** |
+| <img src="/Imagenes/Team photo/ANNA.jpeg" width="550"/> | **Ruiz Castillo, Anna Marypaz** | **Análisis de Riesgos y Viabilidad** | **Perros, ver series y música** |
+| <img src="/Imagenes/Team photo/ ALONSO.jpeg" width="550"/> | **Vásquez Guillén, Alonso Diego** | **Validación Técnica y Materiales** | **Fútbol, videojuegos y ajedrez** |
+| <img src="/Imagenes/Team photo/JHAIR.jpeg" width="550"/> | **Salazar Requejo Radmel Jhair** | **Análisis Biomecánico y de Usuario** | **Deportes y videojuegos** |
 
   
 ---
