@@ -1,0 +1,90 @@
+#include <Wire.h>
+#include <Adafruit_MPU6050.h>
+#include <Adafruit_Sensor.h>
+#include <math.h>
+
+Adafruit_MPU6050 mpu;
+
+void setup() {
+
+  Serial.begin(115200);
+
+  // Pines de comunicacion I2C
+  Wire.begin(21, 22);
+
+  // Desactivar motor durante la prueba
+  pinMode(25, OUTPUT);
+  digitalWrite(25, LOW);
+
+  // Detectar la IMU
+  if (!mpu.begin(0x68, &Wire)) {
+
+    Serial.println("ERROR: IMU no detectada");
+
+    while (true) {
+      delay(1000);
+    }
+  }
+
+  Serial.println("IMU conectada correctamente");
+
+  // Configuracion del acelerometro
+  mpu.setAccelerometerRange(MPU6050_RANGE_4_G);
+
+  // Configuracion del giroscopio
+  mpu.setGyroRange(MPU6050_RANGE_500_DEG);
+
+  // Filtro para reducir ruido
+  mpu.setFilterBandwidth(MPU6050_BAND_21_HZ);
+}
+
+void loop() {
+
+  sensors_event_t a, g, t;
+
+  mpu.getEvent(&a, &g, &t);
+
+  // Aceleraciones
+  float ax = a.acceleration.x;
+  float ay = a.acceleration.y;
+  float az = a.acceleration.z;
+
+  // Velocidad angular en grados/s
+  float gx = g.gyro.x * 180.0 / PI;
+  float gy = g.gyro.y * 180.0 / PI;
+  float gz = g.gyro.z * 180.0 / PI;
+
+  // Angulos de inclinacion
+  float roll = atan2(ay, az) * 180.0 / PI;
+
+  float pitch = atan2(-ax,
+    sqrt(ay * ay + az * az)) * 180.0 / PI;
+
+  Serial.println("======================");
+
+  Serial.print("Aceleracion X: ");
+  Serial.println(ax);
+
+  Serial.print("Aceleracion Y: ");
+  Serial.println(ay);
+
+  Serial.print("Aceleracion Z: ");
+  Serial.println(az);
+
+  Serial.print("Giroscopio X: ");
+  Serial.println(gx);
+
+  Serial.print("Giroscopio Y: ");
+  Serial.println(gy);
+
+  Serial.print("Giroscopio Z: ");
+  Serial.println(gz);
+
+  Serial.print("Roll: ");
+  Serial.println(roll);
+
+  Serial.print("Pitch: ");
+  Serial.println(pitch);
+
+  delay(200);
+}

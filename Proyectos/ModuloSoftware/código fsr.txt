@@ -1,0 +1,160 @@
+const int FSR1 = 34;
+const int FSR2 = 35;
+const int FSR3 = 32;
+
+const int MOTOR = 25;
+
+// Umbrales individuales
+int umbral1 = 1500;
+int umbral2 = 1500;
+int umbral3 = 1500;
+
+// Configuracion del motor
+const int tiempoVibracion = 200;
+const int tiempoPausa = 120;
+const int pausaEntreAvisos = 700;
+
+const int MOTOR_ON = HIGH;
+const int MOTOR_OFF = LOW;
+
+// Evitar activaciones repetidas
+bool activo[3] = {false, false, false};
+bool pendiente[3] = {false, false, false};
+
+const int histeresis = 100;
+
+// Control de vibraciones
+int pulsosRestantes = 0;
+int estadoMotor = 0;
+
+unsigned long tiempoMotor = 0;
+unsigned long tiempoSerial = 0;
+
+void setup() {
+Serial.begin(115200);
+
+analogReadResolution(12);
+
+analogSetPinAttenuation(FSR1, ADC_11db);
+analogSetPinAttenuation(FSR2, ADC_11db);
+analogSetPinAttenuation(FSR3, ADC_11db);
+
+pinMode(MOTOR, OUTPUT);
+digitalWrite(MOTOR, MOTOR_OFF);
+}
+
+void verificarSensor(int sensor, int lectura, int umbral) {
+
+// Detectar una nueva presion
+if (lectura >= umbral && !activo[sensor]) {
+activo[sensor] = true;
+pendiente[sensor] = true;
+}
+
+// Permitir una nueva activacion al soltar
+if (lectura < umbral - histeresis) {
+activo[sensor] = false;
+}
+}
+
+void controlarMotor() {
+
+unsigned long ahora = millis();
+
+// Estado 0: esperar una alerta
+if (estadoMotor == 0) {
+
+for (int i = 0; i < 3; i++) {  
+
+  if (pendiente[i]) {  
+
+    pendiente[i] = false;  
+    pulsosRestantes = i + 1;  
+
+    digitalWrite(MOTOR, MOTOR_ON);  
+
+    tiempoMotor = ahora;  
+    estadoMotor = 1;  
+
+    break;  
+  }  
+}
+
+}
+
+// Estado 1: motor vibrando
+else if (estadoMotor == 1) {
+
+if (ahora - tiempoMotor >= tiempoVibracion) {  
+
+  digitalWrite(MOTOR, MOTOR_OFF);  
+
+  pulsosRestantes--;  
+  tiempoMotor = ahora;  
+
+  if (pulsosRestantes > 0) {  
+    estadoMotor = 2;  
+  } else {  
+    estadoMotor = 3;  
+  }  
+}
+
+}
+
+// Estado 2: pausa entre vibraciones
+else if (estadoMotor == 2) {
+
+if (ahora - tiempoMotor >= tiempoPausa) {  
+
+  digitalWrite(MOTOR, MOTOR_ON);  
+
+  tiempoMotor = ahora;  
+  estadoMotor = 1;  
+}
+
+}
+
+// Estado 3: pausa entre avisos
+else if (estadoMotor == 3) {
+
+if (ahora - tiempoMotor >= pausaEntreAvisos) {  
+  estadoMotor = 0;  
+}
+
+}
+}
+
+void loop() {
+
+int lectura1 = analogRead(FSR1);
+int lectura2 = analogRead(FSR2);
+int lectura3 = analogRead(FSR3);
+
+verificarSensor(0, lectura1, umbral1);
+verificarSensor(1, lectura2, umbral2);
+verificarSensor(2, lectura3, umbral3);
+
+controlarMotor();
+
+// Mostrar valores cada 200 ms
+if (millis() - tiempoSerial >= 200) {
+
+tiempoSerial = millis();  
+
+Serial.print("FSR1: ");  
+Serial.print(lectura1);  
+Serial.print(activo[0] ? " ACTIVADO" : " INACTIVO");  
+
+Serial.print(" | FSR2: ");  
+Serial.print(lectura2);  
+Serial.print(activo[1] ? " ACTIVADO" : " INACTIVO");  
+
+Serial.print(" | FSR3: ");  
+Serial.print(lectura3);  
+Serial.println(activo[2] ? " ACTIVADO" : " INACTIVO");
+
+}
+}
+
+
+-
